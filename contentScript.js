@@ -12,7 +12,7 @@
     }
   });
 
-  const newVideoLoaded = () => {
+  const newVideoLoaded = async () => {
     const bookmarkBtnExists =
       document.getElementsByClassName("bookmark-btn")[0];
     // console.log("button exists: ",bookmarkBtnExists);
@@ -22,14 +22,13 @@
 
       bookmarkBtn.src = chrome.runtime.getURL("assets/download.png");
       bookmarkBtn.className ="ytp-button ytp-subtitles-button bookmark-btn"
-    bookmarkBtn.style.width = "30px";
-    bookmarkBtn.style.height = "30px";
-    bookmarkBtn.style.padding = "5px";
-
+      bookmarkBtn.style.width = "30px";
+      bookmarkBtn.style.height = "30px";
+      bookmarkBtn.style.padding = "5px";
 
       bookmarkBtn.title = "Click to Download";
 
-      youtubeRightControls =document.getElementsByClassName("ytp-right-controls")[0];
+      youtubeRightControls =await document.getElementsByClassName("ytp-right-controls")[0];
       youtubeRightControls.prepend(bookmarkBtn);
       bookmarkBtn.addEventListener("click", ()=>{window.open( "https://www.y2mate.com/youtube/"+currentVideo, "_blank")});
     }
