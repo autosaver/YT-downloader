@@ -7,7 +7,7 @@
 
     if (type === "NEW") {
       currentVideo = videoId;
-      console.log("NEW", videoId);
+      // console.log("NEW", videoId);
       newVideoLoaded(videoId);
     }
   });
@@ -15,7 +15,7 @@
   const newVideoLoaded = () => {
     const bookmarkBtnExists =
       document.getElementsByClassName("bookmark-btn")[0];
-    console.log("button exists: ",bookmarkBtnExists);
+    // console.log("button exists: ",bookmarkBtnExists);
 
     if (!bookmarkBtnExists) {
       const bookmarkBtn = document.createElement("img");
